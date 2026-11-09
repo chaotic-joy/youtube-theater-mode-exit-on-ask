@@ -10,10 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: zip -r extension.zip manifest.json content.js icons
-      - uses: mnao305/chrome-extension-upload@v5.0.0
+      - uses: mnao305/chrome-extension-upload@v7.0.0
         with:
           file-path: extension.zip
           extension-id: ${{ secrets.CWS_EXTENSION_ID }}
+          publisher-id: ${{ secrets.CWS_PUBLISHER_ID }}
           client-id: ${{ secrets.CWS_CLIENT_ID }}
           client-secret: ${{ secrets.CWS_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CWS_REFRESH_TOKEN }}
