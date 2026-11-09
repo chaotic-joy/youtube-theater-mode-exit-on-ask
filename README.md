@@ -10,8 +10,9 @@ you automatically.
 `content.js` watches for clicks on YouTube's "Ask" button. If the page is in
 theater mode, it cancels that click, clicks YouTube's own theater/default
 toggle button, waits 0.1s, then clicks the Ask button itself so YouTube's
-real Ask panel opens into the default (non-theater) layout. Once the panel's
-suggestion chips render, it clicks "Summarize the video" for you.
+real Ask panel opens into the default (non-theater) layout. In either view,
+once the panel's suggestion chips render, it clicks "Summarize the video" for
+you.
 
 ## Install (unpacked, for development/personal use)
 

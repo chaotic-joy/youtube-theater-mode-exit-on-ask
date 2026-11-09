@@ -2,8 +2,13 @@ document.addEventListener(
   'click',
   (event) => {
     const askButton = event.target.closest?.('button[aria-label="Ask"]');
-    const theaterModeActive = Boolean(document.querySelector('ytd-watch-flexy[theater]'));
-    if (!askButton || !theaterModeActive) {
+    if (!askButton) {
+      return;
+    }
+
+    // Default view: let YouTube open the panel, then pick the chip.
+    if (!document.querySelector('ytd-watch-flexy[theater]')) {
+      clickSummarizeChipWhenReady();
       return;
     }
 
@@ -18,10 +23,10 @@ document.addEventListener(
     toggleButton.click();
 
     // 2. Wait 0.1s, then 3. click the Ask button (re-queried in case the
-    // DOM was rebuilt when theater mode exited).
+    // DOM was rebuilt). That click re-enters this listener in default view,
+    // which handles the chip.
     setTimeout(() => {
       document.querySelector('button[aria-label="Ask"]')?.click();
-      clickSummarizeChipWhenReady();
     }, 100);
   },
   true
