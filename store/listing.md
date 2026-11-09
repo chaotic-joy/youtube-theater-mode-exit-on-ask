@@ -40,4 +40,5 @@ Not affiliated with or endorsed by YouTube or Google.
 
 - Store icon: `icons/icon128.png`
 - Small promo tile: `store/promo-440x280.png`
+- Marquee promo tile: `store/marquee-1400x560.png`
 - Screenshots (1280×800), upload in order: `store/screenshot-1.png`, `store/screenshot-2.png`, `store/screenshot-3.png`
